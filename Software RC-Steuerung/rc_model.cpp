@@ -43,7 +43,7 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
     //Output.setOutputData(1, Input.getTrigger());
     //Output.setOutputData(3, Input.getTrigger()*-1);
 
-
+    //wer das liest ist doof
 
 
     Output.setOutputData(2, 100 - Input.getXRStick());
