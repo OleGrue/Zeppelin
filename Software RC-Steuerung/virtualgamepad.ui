@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VirtualGamePad</class>
+ <widget class="QWidget" name="VirtualGamePad">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QCheckBox" name="checkBox_buttonLeft">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>89</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>Left Bumper</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_buttonRight">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>90</y>
+     <width>87</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Right Bumper</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="ImageLabel" name="image_gamepad" native="true">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>50</y>
+     <width>261</width>
+     <height>141</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_digipad">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>330</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Directional pad: bottom right</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider_triggerLeft">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>40</y>
+     <width>84</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
+   <property name="sliderPosition">
+    <number>0</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="invertedAppearance">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_leftTrigger">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>21</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Left Trigger: -1000</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_rightTrigger">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>11</y>
+     <width>62</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Right Trigger</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider_triggerRight">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>30</y>
+     <width>84</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-1000</number>
+   </property>
+   <property name="maximum">
+    <number>0</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
+   <property name="sliderPosition">
+    <number>0</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="invertedAppearance">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_joystickAxisYLeft">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>151</y>
+     <width>87</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Left Y-Axis: -1000</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider_axisYLeft">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>170</y>
+     <width>84</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-1000</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider_axisXLeft">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>217</y>
+     <width>84</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-1000</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_joystickAxisXLeft">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>198</y>
+     <width>87</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Left X-Axis: -1000</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_top">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>241</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_topLeft">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>260</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_topRight">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>260</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_left">
+   <property name="geometry">
+    <rect>
+     <x>141</x>
+     <y>279</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_none">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>279</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_bottomLeft">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>298</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_right">
+   <property name="geometry">
+    <rect>
+     <x>217</x>
+     <y>279</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_bottomRight">
+   <property name="geometry">
+    <rect>
+     <x>198</x>
+     <y>298</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_bottom">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>317</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_buttonY">
+   <property name="geometry">
+    <rect>
+     <x>501</x>
+     <y>121</y>
+     <width>64</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Button Y</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_buttonB">
+   <property name="geometry">
+    <rect>
+     <x>501</x>
+     <y>167</y>
+     <width>64</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Button B</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_buttonA">
+   <property name="geometry">
+    <rect>
+     <x>501</x>
+     <y>190</y>
+     <width>65</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Button A</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_buttonX">
+   <property name="geometry">
+    <rect>
+     <x>501</x>
+     <y>144</y>
+     <width>64</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Button X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_joystickAxisYRight">
+   <property name="geometry">
+    <rect>
+     <x>481</x>
+     <y>231</y>
+     <width>93</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Right Y-Axis: -1000</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider_axisYRight">
+   <property name="geometry">
+    <rect>
+     <x>481</x>
+     <y>250</y>
+     <width>84</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-1000</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_joystickAxisXRight">
+   <property name="geometry">
+    <rect>
+     <x>481</x>
+     <y>278</y>
+     <width>93</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Right X-Axis: -1000</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider_axisXRight">
+   <property name="geometry">
+    <rect>
+     <x>481</x>
+     <y>297</y>
+     <width>84</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-1000</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="singleStep">
+    <number>5</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <zorder>horizontalSlider_triggerLeft</zorder>
+  <zorder>label_leftTrigger</zorder>
+  <zorder>label_rightTrigger</zorder>
+  <zorder>horizontalSlider_triggerRight</zorder>
+  <zorder>label_joystickAxisYLeft</zorder>
+  <zorder>horizontalSlider_axisYLeft</zorder>
+  <zorder>horizontalSlider_axisXLeft</zorder>
+  <zorder>label_joystickAxisXLeft</zorder>
+  <zorder>radioButton_top</zorder>
+  <zorder>radioButton_topLeft</zorder>
+  <zorder>radioButton_topRight</zorder>
+  <zorder>radioButton_left</zorder>
+  <zorder>radioButton_none</zorder>
+  <zorder>radioButton_bottomLeft</zorder>
+  <zorder>radioButton_right</zorder>
+  <zorder>radioButton_bottomRight</zorder>
+  <zorder>radioButton_bottom</zorder>
+  <zorder>checkBox_buttonY</zorder>
+  <zorder>checkBox_buttonB</zorder>
+  <zorder>checkBox_buttonA</zorder>
+  <zorder>checkBox_buttonX</zorder>
+  <zorder>label_joystickAxisYRight</zorder>
+  <zorder>horizontalSlider_axisYRight</zorder>
+  <zorder>label_joystickAxisXRight</zorder>
+  <zorder>horizontalSlider_axisXRight</zorder>
+  <zorder>checkBox_buttonLeft</zorder>
+  <zorder>image_gamepad</zorder>
+  <zorder>checkBox_buttonRight</zorder>
+  <zorder>label_digipad</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ImageLabel</class>
+   <extends>QWidget</extends>
+   <header>imagelabel.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

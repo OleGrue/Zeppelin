@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/images/german">
+        <file>XBox-360-Controller-medium.png</file>
+        <file>XBox-360-Controller-plain.png</file>
+        <file>emergency_button_pressed.png</file>
+        <file>emergency_button_released.png</file>
+        <file>brushless-motor.png</file>
+        <file>servo.png</file>
+    </qresource>
+</RCC>
