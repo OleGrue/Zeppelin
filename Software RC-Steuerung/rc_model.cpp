@@ -44,6 +44,7 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
     //Output.setOutputData(3, Input.getTrigger()*-1);
 
     //wer das liest ist doof
+    //screw you Hendik
 
 
     Output.setOutputData(2, 100 - Input.getXRStick());
