@@ -123,7 +123,7 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
         float speed_right = onek_stick/1000*speed_speed;
 
         Output.setOutputData(2, speed_right);  //gives the right motor the correct speed
-        Output.setOutputData(1,speed_speed);  //sets the left motor to the normal speed
+        Output.setOutputData(4,speed_speed);  //sets the left motor to the normal speed
     }
     else if(Input.getXRStick()<-100){  //determines the speed of the left motor
 
@@ -131,23 +131,23 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
         float onek_stick = 1000-right_input;
         float speed_left = onek_stick/1000*speed_speed;
 
-        Output.setOutputData(1, speed_left);
+        Output.setOutputData(4, speed_left);
         Output.setOutputData(2,speed_speed);
 
     }  //gives the motors their normal speed
     else if(Input.getTrigger()<-50){
-        Output.setOutputData(1, speed_speed);
+        Output.setOutputData(4, speed_speed);
         Output.setOutputData(2,- speed_speed);
     }
     //Powerspiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin (right)
     else if(Input.getTrigger()>50){
-        Output.setOutputData(1,- speed_speed);
+        Output.setOutputData(4,- speed_speed);
         Output.setOutputData(2,speed_speed);
     }
     //Powerspiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin (left)
     else{
         Output.setOutputData(2,speed_speed);
-        Output.setOutputData(1,speed_speed);
+        Output.setOutputData(4,speed_speed);
    }
 }
 
@@ -157,10 +157,10 @@ void RCModel::setInitialData(OutputDataSet &Output)
 {
     //Was ist an die Ports angeschlossen? e-empty, m-motor, s-servo
     Output.setPortType(0,'e');  //Type Port 0 Kein Alles
-    Output.setPortType(1,'m');  //Type Port 1
+    Output.setPortType(1,'e');  //Type Port 1
     Output.setPortType(2,'m');  //Type Port 2
     Output.setPortType(3,'s');  //Type Port 3
-    Output.setPortType(4,'s');  //Type Port 4
+    Output.setPortType(4,'m');  //Type Port 4
     Output.setPortType(5,'e');  //Type Port 5 KEin Servo
     Output.setPortType(6,'e');  //Type Port 6
     Output.setPortType(7,'s');  //Type Port 7
