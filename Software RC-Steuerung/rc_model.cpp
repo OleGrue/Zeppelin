@@ -19,10 +19,12 @@
  ************************************************************************************************/
 
 #include "rc_model.h"
+#include <iostream>
+#include <stdlib.h>
 
 //Global variables
 int speed_speed = 0; //defines the general speed of all motors
-
+int up_down = 0;
 
 //Constructor
 RCModel::RCModel()
@@ -54,15 +56,63 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
 
 
 
-    if(Input.getButtonA()){  //increases general speed
+    if(Input.getButtonB()){  //increases general speed
         speed_speed = speed_speed + 100;
     }
-    if(Input.getButtonB()){  //lowers general speed
+    if(Input.getButtonX()){  //lowers general speed
         speed_speed = speed_speed - 100;
     }
     if(Input.getButtonY()){  //sets speed to 0
         speed_speed = 0;
     }
+    if((Input.getButtonB())&&(Input.getButtonA())){ // increases speed to the max (forward)
+        speed_speed = 1000;
+    }
+    if((Input.getButtonX())&&(Input.getButtonA())){ // increases speed to the max (backward)
+        speed_speed = -1000;
+    }
+
+    if(speed_speed>1000){ //maxes sure the speed doesnt go over 9000 (1000)
+        speed_speed = 1000;
+    }
+
+    if(speed_speed<-1000){ //makes sure the speed doesnt go under -1000
+        speed_speed = -1000;
+    }
+
+
+    if(Input.getDPright()){ //servo goes up
+        up_down = up_down + 100;
+    }
+
+    if(Input.getDPleft()){ //servo goes down
+        up_down = up_down - 100;
+    }
+
+    if(up_down>1000){ //makes sure the servo doesnt go over 45°
+        up_down = 1000;
+    }
+
+    if(up_down<-1000){ //makes sure the servo doesnt go under -45°
+        up_down = -1000;
+
+    }
+
+
+    if(Input.getDPup()){ //resets servo pitch
+        up_down = 0;
+    }
+
+
+
+
+
+    Output. setOutputData(3,up_down); //gives servo commands
+
+
+
+
+
 
 
 
@@ -85,12 +135,20 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
         Output.setOutputData(2,speed_speed);
 
     }  //gives the motors their normal speed
+    else if(Input.getTrigger()<-50){
+        Output.setOutputData(1, speed_speed);
+        Output.setOutputData(2,- speed_speed);
+    }
+    //Powerspiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin (right)
+    else if(Input.getTrigger()>50){
+        Output.setOutputData(1,- speed_speed);
+        Output.setOutputData(2,speed_speed);
+    }
+    //Powerspiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin (left)
     else{
         Output.setOutputData(2,speed_speed);
         Output.setOutputData(1,speed_speed);
-    }
-
-
+   }
 }
 
 //This function initializes the outputs. Here you can declare whether there is a motor or a servo
