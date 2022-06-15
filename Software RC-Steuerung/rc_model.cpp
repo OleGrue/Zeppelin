@@ -57,10 +57,10 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
 
 
     if(Input.getButtonB()){  //increases general speed
-        speed_speed = speed_speed + 100;
+        speed_speed = speed_speed + 200;
     }
     if(Input.getButtonX()){  //lowers general speed
-        speed_speed = speed_speed - 100;
+        speed_speed = speed_speed - 200;
     }
     if(Input.getButtonY()){  //sets speed to 0
         speed_speed = 0;
@@ -146,8 +146,51 @@ void RCModel::calculateOutput(InputDataSet Input, OutputDataSet &Output)
     }
     //Powerspiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin (left)
     else{
-        Output.setOutputData(2,speed_speed);
-        Output.setOutputData(4,speed_speed);
+        if(speed_speed == 1000){
+            Output.setOutputData(2,speed_speed*0.6);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed== 800){
+            Output.setOutputData(2,speed_speed*0.75);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed == 600){
+            Output.setOutputData(2,speed_speed*0.90);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed== 400){
+            Output.setOutputData(2,speed_speed*0.95);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed== 200){
+            Output.setOutputData(2,speed_speed*0.97);
+            Output.setOutputData(4,speed_speed);
+        }
+        if(speed_speed == -1000){
+            Output.setOutputData(2,speed_speed*0.6);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed== -800){
+            Output.setOutputData(2,speed_speed*0.75);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed == -600){
+            Output.setOutputData(2,speed_speed*0.90);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed== -400){
+            Output.setOutputData(2,speed_speed*0.95);
+            Output.setOutputData(4,speed_speed);
+        }
+        else if(speed_speed== -200){
+            Output.setOutputData(2,speed_speed*0.97);
+            Output.setOutputData(4,speed_speed);
+        }
+
+        else{
+            Output.setOutputData(2,speed_speed);
+            Output.setOutputData(4,speed_speed);
+        }
    }
 }
 
